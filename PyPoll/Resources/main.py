@@ -50,9 +50,9 @@ with open(poll_path, 'r') as csvfile:
     #tutor helped me turn to percentage. it was an issue with *100 being outside parenthesis instead of inside
     khan_votes = len(can_khan)
     khan_percent = str(khan_votes/total_votes*100)
-    kp = int(float(khan_percent))
-    kpp = round(khan_percent,2)
-    print("Khan: " + kpp + "% (" + str(khan_votes) + ")")
+    # kp = int(float(khan_percent))
+    # kpp = round(khan_percent,2)
+    print("Khan: " + khan_percent + "% (" + str(khan_votes) + ")")
     
     correy_votes = len(can_correy)
     correy_percent = str(correy_votes/total_votes*100)
