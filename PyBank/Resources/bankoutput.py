@@ -60,12 +60,15 @@ with open(bank_path, 'r') as csvfile:
     # https://careerkarma.com/blog/python-typeerror-int-object-is-not-callable/ (used to debug "sum in not callable")
     pllist = difference.values()
     ROC = str(sum(pllist)/(month_count-1)) #difference is less one month
-    float_ROC = float(ROC)
-    round_ROC = round(float_ROC,2)
-    print("Average Change: $" + str(round_ROC))
+    print("Average Change: $" + ROC)
     increase = (max(pllist))
     print("Greatest Increase in Profits: " + keymax + " $" + str(increase))
     decrease = (min(pllist))
     print("Greatest Decrease in Profits: " + keymin + " $" + str(decrease))
     
+    # Set variable for output file
+    output_file = os.path.join("bank_output.txt")
 
+#  Open the output file
+    with open(output_file, "w", newline="") as datafile:
+        writer = csv.writer(datafile)
