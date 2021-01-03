@@ -37,14 +37,24 @@ with open(bank_path, 'r') as csvfile:
         difference[row[0]] = int(row[1])-prevpl
         prevdate = row[0]
         prevpl = int(row[1])
-
+        
     sum = sum(total, 0)
     month_count = len(date)
     print("Financial Analysis")
     print("----------------------------")
     print("Total Months: " + str(month_count))
     print("Total: $" + str(sum))
-    # print(max(difference(row[1]))
 
+    #pull out just values from dictionary to find min and max https://www.geeksforgeeks.org/python-dictionary-values/
+    print(sum(difference))
+    
+    
+    # pllist = difference.values()
+    # increase = (max(pllist))
+    # print("Greatest Increase in Profits: $" + str(increase))
+    # decrease = (min(pllist))
+    # print("Greatest Decrease in Profits: $" + str(decrease))
+
+    #get values for dictonary
     
 

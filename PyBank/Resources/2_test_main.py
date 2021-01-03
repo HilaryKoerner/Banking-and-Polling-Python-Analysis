@@ -1,107 +1,68 @@
-# Modules
+#PyBank homework
+
+# import modules
 import os
 import csv
 
 # Set path for file
-bank_file = os.path.join('..', 'Resources', 'budget_data.csv')
+bank_path = os.path.join('..', 'Resources', 'budget_data.csv')
 
 #open the csv file
-with open(bank_file, 'r') as bank:
-    csvreader = csv.reader(bank, delimiter=',')
+with open(bank_path, 'r') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',')
 
-    #skip the header
+#skip the header
     next(csvreader,None)
 
-    # #count number of months (This works, kinda!!!!)
-    # #https://www.kite.com/python/answers/how-to-count-the-number-of-lines-in-a-csv-file-in-python
-    # lines = len(list(csvreader))
-    # print(lines)
-    
-    # # total of P&L (not working - just prints each total into one list)
-    # month_year = 0
-    # month_year = []
-    # for row in csvreader:
-    #     month_year=str(row[0])
-    #     month_year.append(month_year)
-    # print(month_year)
-
-    # #number of months (not working) - just prints each date
-    # count = 0
-    # for row in csvreader:
-    #     month_year=str(row[0])
-    #     count = month_year
-    #     print(count)
-
-    # #number of months (not working) - counts each line as one, but doesnt sum
-    # count = 0
-    # for row in csvreader:
-    #     month_year=str(row[0])
-    #     count = month_year.count(month_year)
-    #     print(count)
-
-    # #number of months (not working)
-    # count = 0
-    # for row in csvreader:
-    #     for month_year in row:
-    #         month_year=str(row[0])
-    #         count = month_year.count(row[0])
-    #         print(month_year)
-
-    # #create an empty list to hold results of looping
-    # count = []
-    # for row in csvreader:
-    #     count.values(str(row[0]))
-    # print(count)
-  
-#---------------------------------------------------------------------------------------------------------------------------------------------------
-
-# # total of P&L (not working - just prints each total, not the sum)
-#     for row in csvreader:
-#         total = 0
-#         profit_loss=int(row[1])
-#         total = total + profit_loss
-#         print(total)
-
-##total of P&L (not working - just prints each total into one list)
-    total = 0
+#### MONTH COUNT & P&L TOTAL ######
+#Month Count - bootcamp python day one lecture (lists)
+##Profit Loss Total - commbination of month count code and https://www.geeksforgeeks.org/sum-function-python/
+    date = 0
+    date = []
     total = []
     for row in csvreader:
+        month_year=str(row[0])
+        date.append(month_year)
         profit_loss=int(row[1])
         total.append(profit_loss)
-    print(total)
+    sum_total = sum(total, 0)
+    month_count = len(date)
+    print("Financial Analysis")
+    print("----------------------------")
+    print("Total Months: " + str(month_count))
+    print("Total: $" + str(sum_total))
 
-# # total of P&L (not working - does not sum the total)
-#     total = 0
-#     total = []
-#     for row in csvreader:
-#         profit_loss=int(row[1])
-#         total.append(profit_loss)
-#     print(sum(total)
+#open the csv file
+with open(bank_path, 'r') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',')
 
-    #sum all totals (this does not work - no error, but nothing happens)
-    #https://stackoverflow.com/questions/51325127/using-returned-outputs-from-one-function-in-another-in-python
-    # def bankdata():
-    #     totals=[]
-    #     for i in row(1):
-    #         totals.append(totals)
-    #     return totals
-    #     print(totals)
+#skip the header
+    next(csvreader,None)
+    #iterate through the 
+    difference = {}
+    prevrow = next(csvreader)
+    prevdate = prevrow[0]
+    prevpl = int(prevrow[1])
+
+    for row in csvreader:
+        difference[row[0]] = int(row[1])-prevpl
+        prevdate = row[0]
+        prevpl = int(row[1])
+
+    #this pulls out the key that is paired with the max/min value
+    # https://www.geeksforgeeks.org/python-get-key-with-maximum-value-in-dictionary/
+    keymax = max(difference, key= lambda x: difference[x])
+    keymin = min(difference, key= lambda x: difference[x]) 
     
-    # #sum all totals (this does not work - unsupported operand)
-    # for row in csvreader:
-    #     for i in row[1]:
-    #         total = 0
-    #         total = int(total + i)
-    #         print(total)
+    # pull out just values from dictionary to find min and max https://www.geeksforgeeks.org/python-dictionary-values/
+    # https://careerkarma.com/blog/python-typeerror-int-object-is-not-callable/ (used to debug "sum in not callable")
+    pllist = difference.values()
+    ROC = str(sum(pllist)/month_count)
+    round_ROC = round(int(ROC))
+    print("Average Change: $" + round_ROC)
+    increase = (max(pllist))
+    print("Greatest Increase in Profits: " + keymax + " $" + str(increase))
+    decrease = (min(pllist))
+    print("Greatest Decrease in Profits: " + keymin + " $" + str(decrease))
+    
 
-    # #sum all totals with a function (this does nothing - no error)
-    # for row in csvreader:
-    #     def sum_totals(sum(total)):
-    #         print("Profit Loss Total: ", total)
-    #     total = row[1]
-
-    # #get rate of change
-
-    # #get biggest increase
-
-    # #get biggest decrease
