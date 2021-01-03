@@ -50,21 +50,27 @@ with open(poll_path, 'r') as csvfile:
     #tutor helped me turn to percentage. it was an issue with *100 being outside parenthesis instead of inside
     khan_votes = len(can_khan)
     khan_percent = str(khan_votes/total_votes*100)
-    # kp = int(float(khan_percent))
-    # kpp = round(khan_percent,2)
-    print("Khan: " + khan_percent + "% (" + str(khan_votes) + ")")
+    float_kp = float(khan_percent)
+    round_kp = round(float_kp,4)
+    print("Khan: " + str(round_kp) + "% (" + str(khan_votes) + ")")
     
     correy_votes = len(can_correy)
     correy_percent = str(correy_votes/total_votes*100)
-    print("Correy: " + correy_percent + "% (" + str(correy_votes) + ")")
+    float_cp = float(correy_percent)
+    round_cp = round(float_cp,3)
+    print("Correy: " + str(round_cp) + "% (" + str(correy_votes) + ")")
     
     li_votes = len(can_li)
     li_percent = str(li_votes/total_votes*100)
-    print("Li: " + li_percent + "% (" + str(li_votes) + ")")
+    float_lp = float(li_percent)
+    round_lp = round(float_lp,3)
+    print("Li: " + str(round_lp) + "% (" + str(li_votes) + ")")
     
     otooley_votes = len(can_otooley)
     otooley_percent = str(otooley_votes/total_votes*100)
-    print("O'Tooley: " + otooley_percent + "% (" + str(otooley_votes) + ")")
+    float_op = float(otooley_percent)
+    round_op = round(float_op,3)
+    print("O'Tooley: " + str(round_op) + "% (" + str(otooley_votes) + ")")
     
     print("-------------------------")
     
