@@ -47,20 +47,26 @@ with open(poll_path, 'r') as csvfile:
     
     
     #find len of each vote for each candidate, find percentage, turn into percentage, print text
+    #tutor helped me turn to percentage. it was an issue with *100 being outside parenthesis instead of inside
     khan_votes = len(can_khan)
-    khan_percent = str(khan_votes/total_votes)
-    print("Khan: " + khan_percent + " (" + str(khan_votes) + ")")
-    correy_votes = len(can_correy)
-    correy_percent = str(correy_votes/total_votes)
-    print("Correy: " + correy_percent + " (" + str(correy_votes) + ")")
-    li_votes = len(can_li)
-    li_percent = str(li_votes/total_votes)
-    print("Li: " + li_percent + " (" + str(li_votes) + ")")
-    otooley_votes = len(can_otooley)
-    otooley_percent = str(otooley_votes/total_votes)
-    print("O'Tooley: " + otooley_percent + " (" + str(otooley_votes) + ")")
-    print("-------------------------")
+    khan_percent = str(khan_votes/total_votes*100)
+    kp = int(float(khan_percent))
+    kpp = round(khan_percent,2)
+    print("Khan: " + kpp + "% (" + str(khan_votes) + ")")
     
+    correy_votes = len(can_correy)
+    correy_percent = str(correy_votes/total_votes*100)
+    print("Correy: " + correy_percent + "% (" + str(correy_votes) + ")")
+    
+    li_votes = len(can_li)
+    li_percent = str(li_votes/total_votes*100)
+    print("Li: " + li_percent + "% (" + str(li_votes) + ")")
+    
+    otooley_votes = len(can_otooley)
+    otooley_percent = str(otooley_votes/total_votes*100)
+    print("O'Tooley: " + otooley_percent + "% (" + str(otooley_votes) + ")")
+    
+    print("-------------------------")
     
     ##conditionals to printer winner - candidate must have higher vote totals compared to all three candidates
     #similar to RPS activity
