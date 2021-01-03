@@ -48,6 +48,7 @@ with open(poll_path, 'r') as csvfile:
     
     #find len of each vote for each candidate, find percentage, turn into percentage, print text
     #tutor helped me turn to percentage. it was an issue with *100 being outside parenthesis instead of inside
+    #cast all percentages to float before rounding https://www.programmersought.com/article/77535564709/
     khan_votes = len(can_khan)
     khan_percent = str(khan_votes/total_votes*100)
     float_kp = float(khan_percent)
