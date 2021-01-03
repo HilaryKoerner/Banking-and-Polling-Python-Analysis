@@ -58,6 +58,7 @@ with open(bank_path, 'r') as csvfile:
     
     # .values() pulls out just values from dictionary to find min and max https://www.geeksforgeeks.org/python-dictionary-values/
     # https://careerkarma.com/blog/python-typeerror-int-object-is-not-callable/ (used to debug "sum in not callable")
+    #cast ROC to float before rounding https://www.programmersought.com/article/77535564709/
     pllist = difference.values()
     ROC = str(sum(pllist)/(month_count-1)) #difference is less one month
     float_ROC = float(ROC)
