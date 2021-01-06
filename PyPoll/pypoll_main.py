@@ -39,6 +39,7 @@ with open(poll_path, 'r') as csvfile:
             can_otooley.append(candidates)
     
     total_votes = len(votes)
+    
     print("Election Results")
     print("----------------------------")
     print("Total Votes: " + str(total_votes))
@@ -52,38 +53,59 @@ with open(poll_path, 'r') as csvfile:
     khan_percent = str(khan_votes/total_votes*100)
     float_kp = float(khan_percent)
     round_kp = round(float_kp,4)
-    print("Khan: " + str(round_kp) + "% (" + str(khan_votes) + ")")
-    
+    kahn_data = ("Khan: " + str(round_kp) + "% (" + str(khan_votes) + ")")
+    print(kahn_data)
+
     correy_votes = len(can_correy)
     correy_percent = str(correy_votes/total_votes*100)
     float_cp = float(correy_percent)
     round_cp = round(float_cp,3)
-    print("Correy: " + str(round_cp) + "% (" + str(correy_votes) + ")")
+    correy_data = ("Correy: " + str(round_cp) + "% (" + str(correy_votes) + ")")
+    print(correy_data)
     
     li_votes = len(can_li)
     li_percent = str(li_votes/total_votes*100)
     float_lp = float(li_percent)
     round_lp = round(float_lp,3)
-    print("Li: " + str(round_lp) + "% (" + str(li_votes) + ")")
+    li_data = ("Li: " + str(round_lp) + "% (" + str(li_votes) + ")")
+    print(li_data)
     
     otooley_votes = len(can_otooley)
     otooley_percent = str(otooley_votes/total_votes*100)
     float_op = float(otooley_percent)
     round_op = round(float_op,3)
-    print("O'Tooley: " + str(round_op) + "% (" + str(otooley_votes) + ")")
-    
-    print("-------------------------")
-    
-    ##conditionals to printer winner - candidate must have higher vote totals compared to all three candidates
-    #similar to RPS activity
-    if khan_votes > correy_votes and khan_votes > li_votes and khan_votes > otooley_votes:
-        print("Winner: Khan")
-    if correy_votes > khan_votes and correy_votes > li_votes and correy_votes > otooley_votes:
-        print("Winner: Correy")
-    if li_votes > khan_votes and li_votes > correy_votes and li_votes > otooley_votes:
-        print("Winner: Li")
-    if otooley_votes > khan_votes and otooley_votes > correy_votes and otooley_votes > li_votes:
-        print("Winner: O'Tooley")
+    otooley_data = ("O'Tooley: " + str(round_op) + "% (" + str(otooley_votes) + ")")
+    print(otooley_data)
     
     print("-------------------------")
 
+##conditionals to printer winner - candidate must have higher vote totals compared to all three other candidates
+    #similar to RPS activity
+    if khan_votes > correy_votes and khan_votes > li_votes and khan_votes > otooley_votes:
+        winner = ("Winner: Khan")
+    if correy_votes > khan_votes and correy_votes > li_votes and correy_votes > otooley_votes:
+        winner = ("Winner: Correy")
+    if li_votes > khan_votes and li_votes > correy_votes and li_votes > otooley_votes:
+        winner = ("Winner: Li")
+    if otooley_votes > khan_votes and otooley_votes > correy_votes and otooley_votes > li_votes:
+        winner = ("Winner: O'Tooley")
+    print(winner)
+    
+    print("-------------------------")
+# Specify the file to write to
+output_path = os.path.join(".", "Analysis", "pypoll_analysis.txt")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w') as writer:
+    #https://realpython.com/read-write-files-python/ (this shows the writer.write() about half way down)
+    writer.write("Election Results" + '\n')
+    writer.write("-------------------------" + '\n')
+    writer.write("Total Votes: " + str(total_votes) + '\n')
+    writer.write((kahn_data) + '\n')
+    writer.write((correy_data) + '\n')
+    writer.write((li_data) + '\n')
+    writer.write((otooley_data) + '\n')
+    writer.write("-------------------------" + '\n')
+    writer.write((winner)+'\n')
+    writer.write("-------------------------" + '\n')
+    
