@@ -1,5 +1,3 @@
-#This works - just need to turn numbers into percentages
-
 #PyPoll homework
 
 # import modules
@@ -7,7 +5,7 @@ import os
 import csv
 
 # Set path for file
-poll_path = os.path.join('..', 'Resources', 'election_data.csv')
+poll_path = os.path.join('.', 'Resources', 'election_data.csv')
 
 #open the csv file
 with open(poll_path, 'r') as csvfile:
@@ -17,7 +15,7 @@ with open(poll_path, 'r') as csvfile:
     next(csvreader,None)
 
 #vote count - same as month count from PyBank (bootcamp python day one lecture (lists))
-#put all votes in a list and all votes for each candidate in its own list
+#put all votes in a list and all votes for each candidate in their own list
     votes = []
     can_khan = []
     can_correy = []
@@ -39,6 +37,7 @@ with open(poll_path, 'r') as csvfile:
             can_li.append(candidates)
         if candidates == otooley:
             can_otooley.append(candidates)
+    
     total_votes = len(votes)
     print("Election Results")
     print("----------------------------")
@@ -86,5 +85,5 @@ with open(poll_path, 'r') as csvfile:
     if otooley_votes > khan_votes and otooley_votes > correy_votes and otooley_votes > li_votes:
         print("Winner: O'Tooley")
     
-    
+    print("-------------------------")
 
