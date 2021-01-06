@@ -5,7 +5,7 @@ import os
 import csv
 
 # Set path for file
-bank_path = os.path.join('..', 'Resources', 'budget_data.csv')
+bank_path = os.path.join('.', 'Resources', 'budget_data.csv')
 
 #open the csv file
 with open(bank_path, 'r') as csvfile:
@@ -68,5 +68,3 @@ with open(bank_path, 'r') as csvfile:
     print("Greatest Increase in Profits: " + keymax + " $" + str(increase))
     decrease = (min(pllist))
     print("Greatest Decrease in Profits: " + keymin + " $" + str(decrease))
-    
-
