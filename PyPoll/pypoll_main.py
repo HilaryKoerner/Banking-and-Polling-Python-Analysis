@@ -101,6 +101,7 @@ with open(output_path, 'w') as writer:
     writer.write("Election Results" + '\n')
     writer.write("-------------------------" + '\n')
     writer.write("Total Votes: " + str(total_votes) + '\n')
+    writer.write("-------------------------" + '\n')
     writer.write((kahn_data) + '\n')
     writer.write((correy_data) + '\n')
     writer.write((li_data) + '\n')
