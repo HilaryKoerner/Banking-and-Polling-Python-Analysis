@@ -9,9 +9,9 @@ The first challenge is to analyze budget data. The csv file is just two columns 
 4. I calculated the greatest increase by finding the max value of my dictionary. I did this for the greatest decrease as well. I pulled the months that corresponded to these amounts
 5. I compiled the findings into an easy-to-read python print out and exported the findings to a text file 
   
-The second challenge was to analyze election results. This csv file had three columns: voter ID, county, and vote cast by ID. In this exercise I did the following:
+The second challenge was to analyze election results. This csv file had three columns (voter ID, county, vote cast by ID). In this exercise I did the following:
 1. Found the total number of votes cast. I did list by pulling the votes IDs into one list and finding the length. 
 2. I calculated the votes each candidate received and found the percentage of votes. I did this by using the candidates' names and if statements. I found the percentage by dividing the candidate vote total by the total number of votes. 
-3. I determined the winner by using if/and statements. If a candidate had more votes than the other three candidates, there were determined the winner. 
+3. I determined the winner by using if/and statements. If a candidate had more votes than the other three candidates, they were determined the winner. 
 4. I compiled the findings into an easy-to-read python print out and exported the findings to a text file. 
   
