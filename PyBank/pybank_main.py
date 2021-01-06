@@ -65,6 +65,22 @@ with open(bank_path, 'r') as csvfile:
     round_ROC = round(float_ROC,2)
     print("Average Change: $" + str(round_ROC))
     increase = (max(pllist))
-    print("Greatest Increase in Profits: " + keymax + " $" + str(increase))
+    print("Greatest Increase in Profits: " + keymax + " ($" + str(increase) + ")")
     decrease = (min(pllist))
-    print("Greatest Decrease in Profits: " + keymin + " $" + str(decrease))
+    print("Greatest Decrease in Profits: " + keymin + " ($" + str(decrease) + ")")
+
+
+# Specify the file to write to
+output_path = os.path.join(".", "Analysis", "pybank_analysis.txt")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w') as writer:
+    #https://realpython.com/read-write-files-python/ (this shows the writer.write() about half way down)
+    writer.write("Financial Analysis" + '\n')
+    writer.write("-------------------------" + '\n')
+    writer.write("Total Months: " + str(month_count) + '\n')
+    writer.write("Total: $" + str(sum_total) + '\n')
+    writer.write("Average Change: $" + str(round_ROC) + '\n')
+    writer.write("Greatest Increase in Profits: " + keymax + " ($" + str(increase) + ")" + '\n')
+    writer.write("Greatest Decrease in Profits: " + keymin + " ($" + str(decrease) + ")" + '\n')
+    
