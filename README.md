@@ -1,6 +1,8 @@
-# Banking-and-Polling-Python-Analysis
+# Banking and Polling Python Analysis
 
 The first challenge is to analyze budget data. The csv file is just two columns of data (date, Profit & Loss). In this exercise I did the following:
+Supervisor View Product Sales by Department - This allows the Supervisor to view a table of the current departments and their total profits based on their sales and over head.
+Supervisor Add New Department - This allows the Supervisor to add an entirely new department to be used in the inventory.
 1. Counted how many months of data were included in the data set. This was achieved by putting the dates into their own list and finding the length. 
 2. Found the total sum of the profit and loss. This was done by putting the profit & loss data into a list and calculating the sum.  
 3. Calculated the rate of change. I iterated through the csv file and found the difference of each month compared to the previous month. I put these amounts into a dictionary with the corresponding dates. To find the rate of change, I took the sum of the difference and divided that by total months less one month
