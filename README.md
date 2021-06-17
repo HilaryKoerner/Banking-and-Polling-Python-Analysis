@@ -1,7 +1,4 @@
-# 
-Banking-and-Polling-Python-Analysis
-
-This exercise takes two data sets and requests analysis. 
+# Banking-and-Polling-Python-Analysis
 
 The first challenge is to analyze budget data. The csv file is just two columns of data (date, Profit & Loss). In this exercise I did the following:
 1. Counted how many months of data were included in the data set. This was achieved by putting the dates into their own list and finding the length. 
