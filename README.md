@@ -1,6 +1,6 @@
 # Banking and Polling Python Analysis
 
-Using Python, I analyzed two data sets (budgetary data and polling data). 
+Using Python, I analyzed two data sets (budgetary data and polling data from CSV files). 
 
 The first challenge is to analyze budget data. The csv file is just two columns of data (date, Profit & Loss). In this exercise I did the following:
 
