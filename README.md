@@ -4,7 +4,8 @@ Using Python, I analyzed two data sets (budgetary data and polling data from CSV
 
 The first challenge is to analyze budget data. The csv file is just two columns of data (date, Profit & Loss). In this exercise I did the following:
 
-1. Counted how many months of data were included in the data set. This was done by putting the dates into their own list and finding the length. 
+1. Counted how many months of data were included in the data set. This was done by putting the dates into their own list and finding the length.
+ 
 ![pybankcount](https://user-images.githubusercontent.com/74504885/122773775-3efdfb80-d26e-11eb-92df-0f2eb1d724dc.PNG)
 
 2. Found the total sum of the profit and loss. This was achieved by putting the profit and loss data into a list and calculating the sum.  
@@ -20,10 +21,12 @@ The first challenge is to analyze budget data. The csv file is just two columns 
   
 The second challenge was to analyze election results. This csv file had three columns (voter ID, county, vote cast by ID). In this exercise I did the following:
 1. Found the total number of votes cast. I did list by pulling the votes IDs into one list and finding the length. 
+
 ![pypollvotecount](https://user-images.githubusercontent.com/74504885/122774173-9734fd80-d26e-11eb-9828-eac996a3ac8c.PNG)
 
 2. I calculated the votes each candidate received and found the percentage of votes. I did this by using the candidates' names and if statements. I found the percentage by dividing the candidate vote total by the total number of votes. 
 3. I determined the winner by using if/and statements. If a candidate had more votes than the other three candidates, they were determined the winner. 
+
 ![pypollwinner](https://user-images.githubusercontent.com/74504885/122774238-a2882900-d26e-11eb-87fd-16036b9bf816.PNG)
 
 
